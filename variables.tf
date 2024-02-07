@@ -164,9 +164,9 @@ variable "tracing_config_mode" {
 
 variable "vpc_config" {
   type = list(object({
-    security_group_ids          = optional(list(string))
-    subnet_ids                  = optional(list(string))
-    subnet_names                = optional(list(string))
+    security_group_ids          = list(string)
+    subnet_ids                  = list(string)
+    subnet_names                = list(string)
     vpc_id                      = optional(string)
     vpc_name                    = optional(string)
     ipv6_allowed_for_dual_stack = optional(bool)
