@@ -13,28 +13,6 @@ variable "architectures" {
   default     = null
 }
 
-variable "cloudwatch_lambda_insights_enabled" {
-  type        = bool
-  description = "Enable CloudWatch Lambda Insights for the Lambda Function."
-  default     = false
-}
-
-variable "cloudwatch_logs_retention_in_days" {
-  type        = number
-  description = <<EOF
-  Specifies the number of days you want to retain log events in the specified log group. Possible values are:
-  1, 3, 5, 7, 14, 30, 60, 90, 120, 150, 180, 365, 400, 545, 731, 1827, 3653, and 0. If you select 0, the events in the
-  log group are always retained and never expire.
-  EOF
-  default     = null
-}
-
-variable "cloudwatch_logs_kms_key_arn" {
-  type        = string
-  description = "The ARN of the KMS Key to use when encrypting log data."
-  default     = null
-}
-
 variable "description" {
   type        = string
   description = "Description of what the Lambda Function does."
@@ -105,12 +83,6 @@ variable "kms_key_arn" {
   default     = ""
 }
 
-variable "lambda_at_edge_enabled" {
-  type        = bool
-  description = "Enable Lambda@Edge for your Node.js or Python functions. The required trust relationship and publishing of function versions will be configured in this module."
-  default     = false
-}
-
 variable "layers" {
   type        = list(string)
   description = "List of Lambda Layer Version ARNs (maximum of 5) to attach to the Lambda Function."
@@ -127,12 +99,6 @@ variable "package_type" {
   type        = string
   description = "The Lambda deployment package type. Valid values are Zip and Image."
   default     = "Zip"
-}
-
-variable "permissions_boundary" {
-  type        = string
-  default     = ""
-  description = "ARN of the policy that is used to set the permissions boundary for the role"
 }
 
 variable "publish" {
@@ -184,16 +150,6 @@ variable "source_code_hash" {
   default     = ""
 }
 
-variable "ssm_parameter_names" {
-  type        = list(string)
-  description = <<EOF
-  List of AWS Systems Manager Parameter Store parameter names. The IAM role of this Lambda function will be enhanced
-  with read permissions for those parameters. Parameters must start with a forward slash and can be encrypted with the
-  default KMS key.
-  EOF
-  default     = null
-}
-
 variable "timeout" {
   type        = number
   description = "The amount of time the Lambda Function has to run in seconds."
@@ -222,12 +178,6 @@ variable "vpc_config" {
   default     = []
 }
 
-variable "iam_policy_arns" {
-  type        = set(string)
-  description = "ARNs of custom policies to be attached to the lambda role"
-  default     = []
-}
-
 variable "dead_letter_config_target_arn" {
   type        = string
   description = <<EOF
@@ -238,67 +188,10 @@ variable "dead_letter_config_target_arn" {
   default     = null
 }
 
-variable "iam_policy_description" {
-  type        = string
-  description = "Description of the IAM policy for the Lambda IAM role"
-  default     = "Provides minimum SSM read permissions."
-}
-
-
 variable "iam_role_name" {
   type        = string
   description = "IAM role name attached to the Lambda Function."
   default     = null
-}
-
-variable "create_iam_role" {
-  type        = bool
-  description = "Whether to create an IAM role for the Lambda Function."
-  default     = false
-}
-
-variable "assume_role_policy" {
-  type        = string
-  description = <<EOF
-  The policy that grants an entity permission to assume the role. In Terraform, you can specify the policy either as a
-  data source, or as a literal value. In Terraform 0.12 and later, you can use a non-constant expression such as a
-  function call, but you cannot use any of the Terraform language built-in functions.
-  EOF
-  default     = null
-}
-
-variable "cloudwatch_logs_tags" {
-  type        = map(string)
-  description = <<EOF
-  A mapping of tags to assign to the resource. 
-  EOF
-  default     = {}
-}
-
-variable "iam_role_description" {
-  type        = string
-  description = "Description of the IAM role for the Lambda Function."
-  default     = ""
-}
-
-variable "iam_role_path" {
-  type        = string
-  description = "Path in which to create the IAM role for the Lambda Function."
-  default     = "/"
-}
-
-variable "iam_role_tags" {
-  type        = map(string)
-  description = <<EOF
-  A mapping of tags to assign to the resource. 
-  EOF
-  default     = {}
-}
-
-variable "create_aws_cloudwatch_log_group" {
-  type        = bool
-  description = "Whether to create an AWS CloudWatch Log Group for the Lambda Function."
-  default     = false
 }
 
 variable "tags" {
