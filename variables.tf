@@ -167,9 +167,9 @@ variable "vpc_config" {
     security_group_ids          = list(string)
     subnet_ids                  = list(string)
     subnet_names                = list(string)
-    vpc_id                      = optional(string)
-    vpc_name                    = optional(string)
-    ipv6_allowed_for_dual_stack = optional(bool)
+    vpc_id                      = string
+    vpc_name                    = string
+    ipv6_allowed_for_dual_stack = bool
   }))
   description = <<EOF
   Provide this to allow your function to access your VPC (if both 'subnet_ids' and 'security_group_ids' are empty then
