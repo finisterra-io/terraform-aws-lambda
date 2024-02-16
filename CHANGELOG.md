@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+### [1.0.2](https://github.com/finisterra-io/terraform-aws-lambda/compare/v1.0.1...v1.0.2) (2024-02-16)
+
+
+### Bug Fixes
+
+* ignore changes ([ebf8fd9](https://github.com/finisterra-io/terraform-aws-lambda/commit/ebf8fd971349772f0ff9afcc1c1182b987300fae))
+
 ### [1.0.1](https://github.com/finisterra-io/terraform-aws-lambda/compare/v1.0.0...v1.0.1) (2024-02-07)
 
 
