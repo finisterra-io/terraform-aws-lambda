@@ -74,4 +74,11 @@ resource "aws_lambda_function" "this" {
       size = var.ephemeral_storage_size
     }
   }
+
+  lifecycle {
+    ignore_changes = [
+      filename,
+      publish,
+    last_modified]
+  }
 }
