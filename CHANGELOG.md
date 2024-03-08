@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+### [1.0.3](https://github.com/finisterra-io/terraform-aws-lambda/compare/v1.0.2...v1.0.3) (2024-03-08)
+
+
+### Bug Fixes
+
+* role name ([6631607](https://github.com/finisterra-io/terraform-aws-lambda/commit/6631607cc78c26cb8fa0936a1f933f6dc854cef1))
+
 ### [1.0.2](https://github.com/finisterra-io/terraform-aws-lambda/compare/v1.0.1...v1.0.2) (2024-02-16)
 
 
