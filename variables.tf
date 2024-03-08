@@ -188,7 +188,7 @@ variable "dead_letter_config_target_arn" {
   default     = null
 }
 
-variable "iam_role_name" {
+variable "iam_role_arn" {
   type        = string
   description = "IAM role name attached to the Lambda Function."
   default     = null
