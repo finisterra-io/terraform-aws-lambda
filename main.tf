@@ -1,9 +1,3 @@
-data "aws_iam_role" "this" {
-  count = var.enabled ? 1 : 0
-
-  name = var.iam_role_name
-}
-
 resource "aws_lambda_function" "this" {
   count = var.enabled ? 1 : 0
 
@@ -19,7 +13,7 @@ resource "aws_lambda_function" "this" {
   package_type                   = var.package_type
   publish                        = var.publish
   reserved_concurrent_executions = var.reserved_concurrent_executions
-  role                           = data.aws_iam_role.this[0].arn
+  role                           = var.iam_role_arn
   runtime                        = var.runtime
   s3_bucket                      = var.s3_bucket
   s3_key                         = var.s3_key
