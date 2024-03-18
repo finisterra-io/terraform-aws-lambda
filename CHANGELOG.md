@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+### [1.0.4](https://github.com/finisterra-io/terraform-aws-lambda/compare/v1.0.3...v1.0.4) (2024-03-18)
+
+
+### Bug Fixes
+
+* add tfsec ([3fc9e96](https://github.com/finisterra-io/terraform-aws-lambda/commit/3fc9e963857aa32e5a82948096eae3e352cae19f))
+
 ### [1.0.3](https://github.com/finisterra-io/terraform-aws-lambda/compare/v1.0.2...v1.0.3) (2024-03-08)
 
 
