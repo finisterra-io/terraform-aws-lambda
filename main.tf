@@ -1,3 +1,5 @@
+#already defined in dynamic "tracing_config"
+#tfsec:ignore:aws-lambda-enable-tracing
 resource "aws_lambda_function" "this" {
   count = var.enabled ? 1 : 0
 
